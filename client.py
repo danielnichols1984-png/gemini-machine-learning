@@ -67,4 +67,8 @@ def create_dash_app():
 
     return app
 
-API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
+API_URL = os.getenv("API_URL", "")
+
+url = f"{API_URL}/api/chat" if API_URL else "/api/chat"
+
+response = requests.post(url, json={"question": user_text})
