@@ -58,10 +58,8 @@ def create_dash_app():
         try:
             # Use Render URL if provided, otherwise use relative path (local)
             url = f"{API_URL}/api/chat" if API_URL else "/api/chat"
-
             response = requests.post(url, json={"question": user_text})
             bot_reply = response.json().get("response", "[No response]")
-
         except Exception as e:
             bot_reply = f"Error contacting server: {e}"
 
