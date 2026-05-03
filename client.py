@@ -55,7 +55,7 @@ def create_dash_app():
         # IMPORTANT: Use relative path so it works on Render
         try:
             response = requests.post(
-                "http://127.0.0.1:8000/api/chat",
+                f"{API_URL}/api/chat",
                 json={"question": user_text}
             )
             bot_reply = response.json().get("response", "[No response]")
@@ -66,3 +66,5 @@ def create_dash_app():
         return new_history, new_history
 
     return app
+
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
