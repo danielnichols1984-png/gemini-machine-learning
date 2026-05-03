@@ -22,7 +22,6 @@ Dockerfile
 To Run application
     uvicorn server:app --reload
 
-
 To Build and Rebuild a Docker Image
 docker build -t gemini-machine-learning .
 

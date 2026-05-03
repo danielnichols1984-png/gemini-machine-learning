@@ -56,10 +56,17 @@ def create_dash_app():
             return chat_history, chat_history
 
         try:
-            # Use Render URL if provided, otherwise use relative path (local)
-            url = f"{API_URL}/api/chat" if API_URL else "/api/chat"
+            # Always use a full URL for requests (never a relative path)
+            if API_URL:
+                # Render deployment
+                url = f"{API_URL}/api/chat"
+            else:
+                # Local development
+                url = "http://127.0.0.1:8000/api/chat"
+
             response = requests.post(url, json={"question": user_text})
             bot_reply = response.json().get("response", "[No response]")
+
         except Exception as e:
             bot_reply = f"Error contacting server: {e}"
 
