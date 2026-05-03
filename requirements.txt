@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+llama-index
+pypdf
+python-dotenv
+requests
+dash
+python-multipart   # if you ever add file uploads
