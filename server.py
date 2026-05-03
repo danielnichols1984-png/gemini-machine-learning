@@ -1,12 +1,10 @@
-# server.py
 from dotenv import load_dotenv
 load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.wsgi import WSGIMiddleware
-from llama_index.core import VectorStoreIndex, StorageContext, load_index_from_storage
+from llama_index.core import StorageContext, load_index_from_storage
 from client import create_dash_app
-
 
 app = FastAPI()
 

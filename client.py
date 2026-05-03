@@ -1,9 +1,12 @@
-# client.py
+import os
 import requests
 from dash import Dash, html, dcc, callback, Output, Input, State
 
 def create_dash_app():
     app = Dash(__name__, requests_pathname_prefix="/dash/")
+
+    # Read API_URL from environment (Render)
+    API_URL = os.getenv("API_URL", "")
 
     app.layout = html.Div(children=[
 
@@ -52,13 +55,13 @@ def create_dash_app():
         if not user_text:
             return chat_history, chat_history
 
-        # IMPORTANT: Use relative path so it works on Render
         try:
-            response = requests.post(
-                f"{API_URL}/api/chat",
-                json={"question": user_text}
-            )
+            # Use Render URL if provided, otherwise use relative path (local)
+            url = f"{API_URL}/api/chat" if API_URL else "/api/chat"
+
+            response = requests.post(url, json={"question": user_text})
             bot_reply = response.json().get("response", "[No response]")
+
         except Exception as e:
             bot_reply = f"Error contacting server: {e}"
 
@@ -66,9 +69,3 @@ def create_dash_app():
         return new_history, new_history
 
     return app
-
-API_URL = os.getenv("API_URL", "")
-
-url = f"{API_URL}/api/chat" if API_URL else "/api/chat"
-
-response = requests.post(url, json={"question": user_text})
