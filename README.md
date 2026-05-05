@@ -66,3 +66,15 @@ google-genai
 groq
 
 ___________________________________________________
+
+Push to Github
+git add .
+git commit -m "your message"
+git push
+
+Get the most recent commit
+git reset --hard HEAD
+
+Pull the latest from remote and discards all local changes
+git fetch --all
+git reset --hard origin/main
