@@ -8,3 +8,5 @@ dash
 python-multipart   # if you ever add file uploads
 llama-index-llms-gemini
 llama-index-embeddings-gemini
+llama-index-llms-google-genai
+llama-index-embeddings-google
