@@ -6,3 +6,5 @@ python-dotenv
 requests
 dash
 python-multipart   # if you ever add file uploads
+llama-index-llms-gemini
+llama-index-embeddings-gemini

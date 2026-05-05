@@ -1,0 +1,1 @@
+{"index_store/data": {"5ec550d2-21a6-4717-b6a6-30770002c7eb": {"__type__": "vector_store", "__data__": "{\"index_id\": \"5ec550d2-21a6-4717-b6a6-30770002c7eb\", \"summary\": null, \"nodes_dict\": {\"chunk_0\": \"chunk_0\", \"chunk_1\": \"chunk_1\", \"chunk_2\": \"chunk_2\", \"chunk_3\": \"chunk_3\", \"chunk_4\": \"chunk_4\"}, \"doc_id_dict\": {}, \"embeddings_dict\": {}}"}}}
