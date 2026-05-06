@@ -1,12 +1,32 @@
+# --- Core Web Framework ---
 fastapi
 uvicorn[standard]
-llama-index
-pypdf
-python-dotenv
-requests
+starlette
+
+# --- Dash Frontend ---
 dash
-python-multipart   # if you ever add file uploads
-llama-index-llms-gemini
-llama-index-embeddings-gemini
+dash-bootstrap-components
+
+# --- HTTP Requests ---
+requests
+
+# --- Environment Variables ---
+python-dotenv
+
+# --- LlamaIndex Core ---
+llama-index-core
+
+# --- LlamaIndex Google GenAI (LLMs + Embeddings) ---
 llama-index-llms-google-genai
-llama-index-embeddings-google
+llama-index-embeddings-google-genai
+
+# --- Google GenAI SDK ---
+google-generativeai
+
+# --- Document Loading ---
+pypdf
+python-docx
+
+# --- Optional but recommended ---
+tqdm
+numpy
